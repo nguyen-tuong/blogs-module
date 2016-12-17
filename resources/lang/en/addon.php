@@ -3,5 +3,5 @@
 return [
     'title'       => 'Blogs',
     'name'        => 'Blogs Module',
-    'description' => ''
+    'description' => 'A versatile articles similar posts-module',
 ];
