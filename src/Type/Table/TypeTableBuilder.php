@@ -17,14 +17,25 @@ class TypeTableBuilder extends TableBuilder
      *
      * @var array|string
      */
-    protected $filters = [];
+    protected $filters = [
+      'search' => [
+            'fields' => [
+                'name',
+                'slug',
+                'description',
+            ],
+        ],
+    ];
 
     /**
      * The table columns.
      *
      * @var array|string
      */
-    protected $columns = [];
+    protected $columns = [
+      'name',
+      'description',
+    ];
 
     /**
      * The table buttons.
@@ -32,7 +43,8 @@ class TypeTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $buttons = [
-        'edit'
+      'edit',
+      'assignments',
     ];
 
     /**
@@ -49,7 +61,9 @@ class TypeTableBuilder extends TableBuilder
      *
      * @var array
      */
-    protected $options = [];
+    protected $options = [
+       'sortable' => true,
+    ];
 
     /**
      * The table assets.
