@@ -25,25 +25,31 @@ class AnomalyModuleBlogsCreateTypesStream extends Migration
      */
     protected $assignments = [
       'name'         => [
-          'translatable' => true,
-          'required'     => true,
-          'unique'       => true,
-          'config'       => [
-              'max' => 50,
-          ],
-      ],
-      'slug'         => [
-          'required' => true,
-          'unique'   => true,
-          'config'   => [
-              'slugify' => 'name',
-              'type'    => '_',
-              'max'     => 50,
-          ],
-      ],
-      'description'  => [
-          'translatable' => true,
-      ],
+            'translatable' => true,
+            'required'     => true,
+            'unique'       => true,
+            'config'       => [
+                'max' => 50,
+            ],
+        ],
+        'slug'         => [
+            'required' => true,
+            'unique'   => true,
+            'config'   => [
+                'slugify' => 'name',
+                'type'    => '_',
+                'max'     => 50,
+            ],
+        ],
+        'layout'       => [
+            'required' => true,
+        ],
+        'theme_layout' => [
+            'required' => true,
+        ],
+        'description'  => [
+            'translatable' => true,
+        ],
     ];
 
 }

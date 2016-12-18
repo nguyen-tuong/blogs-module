@@ -1,4 +1,4 @@
-<?php namespace Anomaly\BlogsModule\Post\Contract;
+<?php namespace Anomaly\BlogsModule\Blog\Contract;
 
 use Anomaly\BlogsModule\Category\Contract\CategoryInterface;
 use Anomaly\BlogsModule\Type\Contract\TypeInterface;
