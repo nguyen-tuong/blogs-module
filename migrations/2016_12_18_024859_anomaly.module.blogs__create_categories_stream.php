@@ -11,7 +11,11 @@ class AnomalyModuleBlogsCreateCategoriesStream extends Migration
      * @var array
      */
     protected $stream = [
-        'slug' => 'categories'
+        'slug' => 'categories',
+        'title_column' => 'name',
+        'translatable' => true,
+        'sortable'     => true,
+        'trashable'    => true,
     ];
 
     /**
@@ -19,6 +23,22 @@ class AnomalyModuleBlogsCreateCategoriesStream extends Migration
      *
      * @var array
      */
-    protected $assignments = [];
+    protected $assignments = [
+      'name'        => [
+          'translatable' => true,
+          'required'     => true,
+          'unique'       => true,
+      ],
+      'slug'        => [
+          'required' => true,
+          'unique'   => true,
+          'config'   => [
+              'slugify' => 'name',
+          ],
+      ],
+      'description' => [
+          'translatable' => true,
+      ],
+    ];
 
 }

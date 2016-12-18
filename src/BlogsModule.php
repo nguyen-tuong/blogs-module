@@ -10,6 +10,39 @@ class BlogsModule extends Module
      * @var array
      */
     protected $sections = [
-        'example'
+      'blogs'      => [
+          'buttons' => [
+              'new_post' => [
+                  'data-toggle' => 'modal',
+                  'data-target' => '#modal',
+                  'href'        => 'admin/blogs/ajax/choose_type',
+              ],
+          ],
+      ],
+      'categories' => [
+          'buttons' => [
+              'new_category',
+          ],
+      ],
+      'types'      => [
+          'buttons' => [
+              'new_type',
+              'assign_fields' => [
+                  'data-toggle' => 'modal',
+                  'data-target' => '#modal',
+                  'enabled'     => 'admin/blogs/types/assignments/*',
+                  'href'        => 'admin/blogs/types/choose/{request.route.parameters.id}',
+              ],
+          ],
+      ],
+      'fields'     => [
+          'buttons' => [
+              'new_field' => [
+                  'data-toggle' => 'modal',
+                  'data-target' => '#modal',
+                  'href'        => 'admin/blogs/fields/choose',
+              ],
+          ],
+      ],
     ];
 }

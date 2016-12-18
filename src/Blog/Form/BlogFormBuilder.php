@@ -17,7 +17,11 @@ class BlogFormBuilder extends FormBuilder
      *
      * @var array|string
      */
-    protected $skips = [];
+    protected $skips = [
+      'type',
+      'entry',
+      'str_id',
+    ];
 
     /**
      * The form actions.

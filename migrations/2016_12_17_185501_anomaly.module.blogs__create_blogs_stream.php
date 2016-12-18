@@ -11,7 +11,10 @@ class AnomalyModuleBlogsCreateBlogsStream extends Migration
      * @var array
      */
     protected $stream = [
-        'slug' => 'blogs'
+        'slug' => 'blogs',
+        'title_column' => 'title',
+        'translatable' => true,
+        'trashable'    => true,
     ];
 
     /**
@@ -19,6 +22,44 @@ class AnomalyModuleBlogsCreateBlogsStream extends Migration
      *
      * @var array
      */
-    protected $assignments = [];
+    protected $assignments = [
+      'str_id'           => [
+          'required' => true,
+          'unique'   => true,
+      ],
+      'title'            => [
+          'translatable' => true,
+          'required'     => true,
+      ],
+      'summary'          => [
+          'translatable' => true,
+      ],
+      'slug'             => [
+          'required' => true,
+          'unique'   => true,
+      ],
+      'type'             => [
+          'required' => true,
+      ],
+      'publish_at'       => [
+          'required' => true,
+      ],
+      'author'           => [
+          'required' => true,
+      ],
+      'meta_title'       => [
+          'translatable' => true,
+      ],
+      'meta_description' => [
+          'translatable' => true,
+      ],
+      'meta_keywords'    => [
+          'translatable' => true,
+      ],
+      'category',
+      'featured',
+      'enabled',
+      'tags',
+    ];
 
 }

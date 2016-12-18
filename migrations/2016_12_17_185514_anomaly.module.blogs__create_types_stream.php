@@ -11,7 +11,11 @@ class AnomalyModuleBlogsCreateTypesStream extends Migration
      * @var array
      */
     protected $stream = [
-        'slug' => 'types'
+        'slug' => 'types',
+        'title_column' => 'name',
+        'sortable'     => true,
+        'translatable' => true,
+        'trashable'    => true,
     ];
 
     /**
@@ -19,6 +23,27 @@ class AnomalyModuleBlogsCreateTypesStream extends Migration
      *
      * @var array
      */
-    protected $assignments = [];
+    protected $assignments = [
+      'name'         => [
+          'translatable' => true,
+          'required'     => true,
+          'unique'       => true,
+          'config'       => [
+              'max' => 50,
+          ],
+      ],
+      'slug'         => [
+          'required' => true,
+          'unique'   => true,
+          'config'   => [
+              'slugify' => 'name',
+              'type'    => '_',
+              'max'     => 50,
+          ],
+      ],
+      'description'  => [
+          'translatable' => true,
+      ],
+    ];
 
 }
